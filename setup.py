@@ -1,5 +1,8 @@
 from setuptools import setup
 
+with open('README.rst') as readme:
+    long_description = readme.read()
+
 setup(
     name='ga-secret-generator',
     author='Andre Keller',
@@ -14,6 +17,7 @@ setup(
         'Topic :: System :: Systems Administration',
     ],
     description='generats a google authenticator totp secret',
+    long_description=long_description,
     entry_points={
         'console_scripts': [
             'ga-secret-generator = ga_secret_generator:main'
@@ -28,5 +32,6 @@ setup(
     # - http://opensource.org/licenses/BSD-3-Clause
     license='BSD',
     packages=['ga_secret_generator'],
-    version='0.1.2',
+    url='https://github.com/andrekeller/ga-secret-generator',
+    version='0.1.3',
 )
