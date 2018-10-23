@@ -28,5 +28,5 @@ setup(
     # - http://opensource.org/licenses/BSD-3-Clause
     license='BSD',
     packages=['ga_secret_generator'],
-    version='0.1.0',
+    version='0.1.2',
 )

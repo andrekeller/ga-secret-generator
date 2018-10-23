@@ -6,6 +6,7 @@ import argparse
 import base64
 import os
 import binascii
+import urllib.parse
 import pyqrcode
 
 def qrcode(keyname, secret):
@@ -40,7 +41,8 @@ def main():
         totp_secret = generate_secret()
 
     if not args.no_qr:
-        qrcode(args.keyname, totp_secret).png(args.output_file, scale=8)
+        qrcode(urllib.parse.quote(args.keyname),
+               totp_secret).png(args.output_file, scale=8)
     print(totp_secret)
 
 
